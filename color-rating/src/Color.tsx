@@ -1,11 +1,16 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
+import { styled } from "@mui/system";
 import StarRating from "./StarRating";
 
-const useStyles = makeStyles({
-  mysection: {
-      height: 50,
-  },
+// const useStyles = makeStyles({
+//   mysection: {
+//       height: 50,
+//   },
+// });
+// <div className={classes.mysection} style={{backgroundColor: color}}/>
+
+const MyDiv = styled('div')({
+  height: 50,
 });
 
 export interface Props {
@@ -16,11 +21,10 @@ export interface Props {
 }
 
 const Color: React.FC<Props> = ({ title, color, rating }) => {
-    const classes = useStyles();
     return (
     <section>
       <h1>{title}</h1>
-      <div className={classes.mysection} style={{backgroundColor: color}}/>
+      <MyDiv style={{backgroundColor: color}}/>
       <StarRating selectedStars={rating}/>
     </section>
   );
