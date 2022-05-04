@@ -1,16 +1,22 @@
 import React from 'react';
 import Color from './Color';
-import { Props as ColorProps } from './Color';
+import { Attrs as ColorProps } from './Color';
 
-interface Props {
+export interface Props {
     colors: Array<ColorProps>;
+    onRemoveColor: (id: string) => void;
+    onRateColor: (id: string, rating: number) => void;
 }
 
-const ColorList: React.FC<Props> = ({ colors }) => {
+const ColorList: React.FC<Props> = ({ colors, onRemoveColor, onRateColor }) => {
     return (
         <div>
             {colors.map(color => (
-                <Color key={color.id} {...color}/>
+                <Color
+                    key={color.id} {...color}
+                    onRemoveColor={onRemoveColor}
+                    onRateColor={onRateColor}
+                />
             ))}
         </div>
     );
