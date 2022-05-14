@@ -1,3 +1,9 @@
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components
+
+https://mui.com/system/styled/
+
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
