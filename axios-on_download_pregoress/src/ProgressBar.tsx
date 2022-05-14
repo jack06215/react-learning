@@ -6,19 +6,21 @@ interface PropsProgressBar {
     percentage: number;
 }
 
-const styles = {
+const RedLoadingBar = styled('div')({
     width: 0,
     height: 10,
     borderRadius: 4,
-    background: "red",
-    transition: "width .4s"
-};
+    background: "#FF0000",
+    transition: "width 0.5s",
+});
 
 const ProgressBar = ({ percentage }: PropsProgressBar) => {
-    const elementRef: any = useRef(null);
-    const updatedWidth = useThrottle(percentage, 400);
+    const elementRef = useRef<HTMLDivElement>(null);
+    const updatedWidth = useThrottle(percentage, 100);
     const updateWidth = (value: number) => {
-        elementRef.current.style.width = `${value}%`;
+        if (elementRef.current != null){
+            elementRef.current.style.width = `${value}%`;
+        }
     };
 
     useEffect(() => {
@@ -27,7 +29,7 @@ const ProgressBar = ({ percentage }: PropsProgressBar) => {
         }
     }, [updatedWidth]);
     
-    return <div ref={elementRef} style={styles}></div>
+    return <RedLoadingBar ref={elementRef}/>
 };
 
 export default ProgressBar;
