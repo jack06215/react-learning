@@ -1,11 +1,12 @@
-import React from 'react';
-import WhiteFilledButton from './components/atoms/Button';
+import React from "react";
+import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+import { WhiteFilledButton } from "./components/atoms/Button";
 
 function App() {
   return (
     <div>
-      <WhiteFilledButton onClick={() => {}} subLabel="sadfasdf" num={5}>
-        ff
+      <WhiteFilledButton icon={<DeleteRoundedIcon />} onClick={() => {}}>
+        クリック me plz!
       </WhiteFilledButton>
     </div>
   );
